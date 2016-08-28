@@ -1,0 +1,9 @@
+PyMySQL
+python-env
+dotenv==0.0.5
+simple-salesforce==0.69
+salesforce-oauth-request
+PyJWT
+cryptography
+pem
+pymongo
