@@ -44,17 +44,6 @@ class SalesForceQuery:
         }[salesforce_obj_type]
 
 
-sf = SalesForceOAuth()
-token = sf.getAccessToken('password')
-salesforce_id = '0031a00000VG4mK'
-dataType = 'Contact'
-sfq = SalesForceQuery(token)
-sfq.getDataById(dataType, salesforce_id)
-##data = sfq.getDataByQuery("SELECT Id, Email FROM Contact WHERE LastName = 'Schweitzer'")
-salesforce_obj = 'Contact'
-data = sfq.describeObject(salesforce_obj)
-for field in data['fields']:
-    print(field['name'])
 
 
 
