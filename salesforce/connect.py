@@ -72,7 +72,6 @@ class SalesForceOAuth:
     """
     def jwtGrantType(self):
         token = dict()
-        certs = pem.parse_file(os.environ.get("SALESFORCE_CERTIFICATE"))
         certfile = os.environ.get("SALESFORCE_PRIVATE_KEY")
 
         with open(certfile, "r") as my_cert_file:
@@ -109,18 +108,7 @@ class SalesForceOAuth:
 
     def decodeToken(self):  
         pass
-        ##TODO:
-        #public_key="private/public.key"
-        #with open(pub_file, "r") as public_key:
-        #    pub = pub_file.read()
-        #decoded = jwt.decode(encoded, pub, audience="https://login.salesforce.com")
-        #print(decoded)
 
-sf = SalesForceOAuth()
-##jwt_token = sf.getAccessToken('jwt')
-##print(jwt_token)
-password_token = sf.getAccessToken('password')
-print(password_token)
 
 
 
