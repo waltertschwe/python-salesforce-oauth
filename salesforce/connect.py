@@ -1,10 +1,11 @@
-import os 
+import os
 import time
 import jwt
 import pem
 import requests
 import json
 import base64
+import rsa
 from calendar import timegm
 from datetime import datetime, timedelta
 from simple_salesforce import Salesforce
@@ -21,10 +22,10 @@ class SalesForceOAuth:
 
         self.consumer_key = os.environ.get("SALESFORCE_OAUTH_CONSUMER_TOKEN")
         self.consumer_secret = os.environ.get("SALESFORCE_OAUTH_CONSUMER_SECRET")
-        self.api_domain = os.environ.get("SALESFORCE_API_DOMAIN")
-        self.access_token_url = os.environ.get("SALESFORCE_ACCESS_TOKEN_URL") 
+	self.access_token_url = os.environ.get("SALESFORCE_ACCESS_TOKEN_URL")
         self.username = os.environ.get("SALESFORCE_USER")
         self.password = os.environ.get("SALESFORCE_PASSWORD") 
+	self.sf_login = os.environ.get("SALESFORCE_LOGIN")
 
     """ Determines OAuth Grant Type and runs method 
         returns a dictionary consisinting of an instance_url and access_token
