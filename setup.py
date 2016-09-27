@@ -11,7 +11,7 @@ with open('LICENSE') as f:
 setup(
     name='salesforce microservice',
     version='0.0.1',
-    description='Middleware application between Salesforce and custom built Progyny projects',
+    description='Middleware application between Salesforce and custom applications ',
     long_description=readme,
     author='Walter Schweitzer',
     author_email='wschweitzer00@gmail.com',
